@@ -19,3 +19,4 @@ Taller1-IAGenerativa/
 ├── rag.py          
 ├── app.py
 └── requirements.txt 
+│
