@@ -73,6 +73,8 @@ pip install -r requirements.txt
 
 python app.py
 
+
+
 Cliente: ¿Dónde está mi pedido 1003?
 
 Respuesta esperada:
@@ -82,7 +84,7 @@ Explicación clara y empática
 
 ---
 
-🧠 Enfoque de Prompt Engineering
+## 🧠 Enfoque de Prompt Engineering
 
 Se aplicaron técnicas avanzadas de prompting:
 
@@ -103,7 +105,7 @@ Alinear la IA con necesidades empresariales
 
 ---
 
-⚖️ Consideraciones éticas
+## ⚖️ Consideraciones éticas
 
 Se realizó un análisis basado en el modelo de Huang, considerando:
 
@@ -123,7 +125,7 @@ Auditoría de respuestas
 
 ---
 
-💡 Resultados clave
+## 💡 Resultados clave
 
 La solución permite:
 
