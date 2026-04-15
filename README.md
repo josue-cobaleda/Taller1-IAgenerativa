@@ -66,22 +66,33 @@ La solución propuesta sigue un enfoque híbrido basado en RAG.
 
 ## 🚀 Cómo ejecutar el proyecto
 
-### 1. Instalar dependencias
+### Requisitos previos
+- Python 3.10+
+- [Ollama](https://ollama.com) instalado y corriendo
+- Modelo LLaMA 3 descargado (`ollama pull llama3`)
 
+### Pasos
+1. Clonar el repositorio:
 ```bash
-pip install -r requirements.txt
+   git clone https://github.com/josue-cobaleda/Taller1-IAgenerativa.git
+   cd Taller1-IAgenerativa
+```
 
-python app.py
+2. Instalar dependencias de Python:
+```bash
+   pip install langchain langchain-community chromadb sentence-transformers
+```
 
+3. Asegurarse de que Ollama esté corriendo:
+```bash
+   ollama serve
+```
 
+4. Abrir y ejecutar el notebook `Model-ollama-langchain.ipynb` en Jupyter o VS Code
 
-Cliente: ¿Dónde está mi pedido 1003?
-
-Respuesta esperada:
-Estado del pedido
-Fecha de entrega
-Explicación clara y empática
-
+5. Probar las consultas:
+   - "¿Cuál es el estado de mi pedido 1003?"
+   - "¿Puedo devolver un producto de higiene personal?"
 ---
 
 ## 🧠 Enfoque de Prompt Engineering
