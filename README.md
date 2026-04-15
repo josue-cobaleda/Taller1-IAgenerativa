@@ -70,32 +70,67 @@ La solución propuesta sigue un enfoque híbrido basado en RAG.
 ## 🚀 Cómo ejecutar el proyecto
 
 ### Requisitos previos
-- Python 3.10+
-- [Ollama](https://ollama.com) instalado y corriendo
-- Modelo LLaMA 3 descargado (`ollama pull llama3`)
+
+- **Python 3.10+** (con venv activo como kernel del notebook)
+- **Ollama** instalado ([descargar desde ollama.com](https://ollama.com))
+- Ejecutar desde **la raíz del proyecto** (donde están `data/` y `prompts/`)
 
 ### Pasos
-1. Clonar el repositorio:
+
+#### 1. Clonar el repositorio:
+
 ```bash
-   git clone https://github.com/josue-cobaleda/Taller1-IAgenerativa.git
-   cd Taller1-IAgenerativa
-```
+git clone https://github.com/josue-cobaleda/Taller1-IAgenerativa.git
+cd Taller1-IAgenerativa
 
-2. Instalar dependencias de Python:
-```bash
-   pip install langchain langchain-community chromadb sentence-transformers
-```
+2. Crear y activar un entorno virtual:
 
-3. Asegurarse de que Ollama esté corriendo:
-```bash
-   ollama serve
-```
+python -m venv venv
+source venv/Scripts/activate  # Windows: venv\Scripts\activate
 
-4. Abrir y ejecutar el notebook `Model-ollama-langchain.ipynb` en Jupyter o VS Code
+3. Instalar dependencias:
+Opción A (recomendado): 
 
-5. Probar las consultas:
-   - "¿Cuál es el estado de mi pedido 1003?"
-   - "¿Puedo devolver un producto de higiene personal?"
+pip install -r requirements.txt
+
+Opción B (alternativa):
+
+pip install langchain>=0.3,<0.4 \
+  langchain-community>=0.3,<0.4 \
+  langchain-ollama>=0.2,<0.3 \
+  langchain-huggingface>=0.1,<0.2 \
+  ollama faiss-cpu sentence-transformers gradio
+
+4. Instalar y ejecutar Ollama:
+Descargar instalador desde https://ollama.com/download/windows (Windows) o https://ollama.com (macOS/Linux)
+Tras instalar, Ollama corre automáticamente como servicio en http://localhost:11434
+Si no está activo, abre una terminal y ejecuta: ollama serve
+Verifica: ollama --version
+
+5. Abrir el notebook:
+En VS Code (con kernel del venv activo):
+
+Abre Model-ollama-langchain.ipynb
+Selecciona kernel: Python 3.10+ (venv)
+Run All para ejecutar de arriba a abajo
+En Jupyter Lab/Notebook:
+
+jupyter lab Model-ollama-langchain.ipynb
+
+6. El notebook descargará automáticamente:
+Modelo LLaMA 3.2:3b (~2 GB) la primera vez
+Embeddings multilingües (~1.3 GB) la primera vez
+En corridas posteriores se cargan desde caché
+Probar el asistente
+Ejecuta las celdas de "Preguntas de prueba" (sección 7)
+
+"¿Cuál es el estado de mi pedido 1003?"
+→ Responde con estado "Retrasado" y fecha de entrega
+
+"¿Puedo devolver un producto de higiene personal?"
+→ Responde según política de devoluciones (no reembolsable)
+El chatbot Gradio abre en http://localhost:7860 tras ejecutar la última sección.
+
 ---
 
 ## 🧠 Enfoque de Prompt Engineering
