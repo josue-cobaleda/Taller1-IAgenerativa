@@ -25,16 +25,13 @@ Taller1-IAGenerativa/
 │
 ├── data/
 │ ├── pedidos.json # Base de datos simulada de pedidos
-│ └── politicas.txt # Políticas de devolución
+│ └── politica_devoluciones.txt # Políticas de devolución
 │
 ├── prompts/
 │ ├── prompt_pedido.txt
 │ └── prompt_devolucion.txt
 │
-├── embeddings.py # Generación de embeddings
-├── rag.py # Recuperación de contexto (mini RAG)
-├── app.py # Aplicación principal
-└── requirements.txt
+├── Model-ollama-langchain.ipynb.
 
 ---
 
